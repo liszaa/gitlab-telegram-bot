@@ -16,7 +16,14 @@
 
 ## Getting Started
 
-#### 1.  Добавляем в проект mvn dependency  
+#### 1.  Добавляем в проект mvn dependency 
+```xml
+<dependency>
+  <groupId>tech.lisza</groupId>
+  <artifactId>gitlab-telegram-bot</artifactId>
+  <version>1.0.0-RELEASE</version>
+</dependency>
+```
 #### 2.  Создаем бота и токен в гитлабе
 Бот создается через @BotFather. После создания понадобится токен, имя бота и создать команду `/branches`  
 Токен для группы в гитлабе можно создать [так](https://docs.gitlab.com/ee/user/group/settings/group_access_tokens.html#create-a-group-access-token-using-ui)
