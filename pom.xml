@@ -10,7 +10,7 @@
     </parent>
     <groupId>tech.lisza</groupId>
     <artifactId>gitlab-telegram-bot</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-RELEASE</version>
     <name>Gitlab-Telegram bot</name>
     <description>A library to connect Gitlab GraphQl API to Telegram bot</description>
     <url>https://github.com/liszaa/gitlab-telegram-bot</url>
@@ -21,7 +21,7 @@
         </license>
     </licenses>
     <properties>
-        <java.version>17</java.version>
+        <java.version>18</java.version>
         <kotlin.version>1.7.21</kotlin.version>
         <plugin.nexus.staging.ver>1.6.13</plugin.nexus.staging.ver>
         <plugin.maven.source.ver>3.2.1</plugin.maven.source.ver>
@@ -105,40 +105,6 @@
     <build>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${project.parent.version}</version>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-maven-plugin</artifactId>
-                <version>${kotlin.version}</version>
-                <configuration>
-                    <args>
-                        <arg>-Xjsr305=strict</arg>
-                    </args>
-                    <compilerPlugins>
-                        <plugin>spring</plugin>
-                    </compilerPlugins>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jetbrains.kotlin</groupId>
-                        <artifactId>kotlin-maven-allopen</artifactId>
-                        <version>${kotlin.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
 
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
@@ -180,6 +146,7 @@
                 </executions>
             </plugin>
 
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
@@ -218,6 +185,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
+                        <version>${plugin.maven.source.ver}</version>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -227,6 +195,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${plugin.maven.javadoc.ver}</version>
                     </plugin>
                 </plugins>
             </build>
