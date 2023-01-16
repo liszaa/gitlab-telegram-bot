@@ -1,6 +1,6 @@
-package lizsa.gitlabtelegrambot.config
+package tech.lisza.gitlabtelegrambot.config
 
-import lizsa.gitlabtelegrambot.properties.GitlabProperties
+import tech.lisza.gitlabtelegrambot.properties.GitlabProperties
 import io.netty.channel.ChannelOption
 import io.netty.handler.timeout.ReadTimeoutHandler
 import io.netty.handler.timeout.WriteTimeoutHandler

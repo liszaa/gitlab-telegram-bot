@@ -1,7 +1,7 @@
-package lizsa.gitlabtelegrambot.telegram.handler
+package tech.lisza.gitlabtelegrambot.telegram.handler
 
-import lizsa.gitlabtelegrambot.NOT_EXIST_COMMAND_HANDLER_KEY
-import lizsa.gitlabtelegrambot.NOT_EXIST_COMMAND_MESSAGE
+import tech.lisza.gitlabtelegrambot.NOT_EXIST_COMMAND_HANDLER_KEY
+import tech.lisza.gitlabtelegrambot.NOT_EXIST_COMMAND_MESSAGE
 import org.springframework.stereotype.Component
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage
 import org.telegram.telegrambots.meta.api.objects.Update

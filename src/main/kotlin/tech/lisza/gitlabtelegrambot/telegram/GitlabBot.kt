@@ -1,8 +1,8 @@
-package lizsa.gitlabtelegrambot.telegram
+package tech.lisza.gitlabtelegrambot.telegram
 
-import lizsa.gitlabtelegrambot.NOT_EXIST_COMMAND_HANDLER_KEY
-import lizsa.gitlabtelegrambot.properties.TelegramBotProperties
-import lizsa.gitlabtelegrambot.telegram.handler.CommandHandler
+import tech.lisza.gitlabtelegrambot.NOT_EXIST_COMMAND_HANDLER_KEY
+import tech.lisza.gitlabtelegrambot.properties.TelegramBotProperties
+import tech.lisza.gitlabtelegrambot.telegram.handler.CommandHandler
 import jakarta.annotation.PostConstruct
 import org.telegram.telegrambots.bots.TelegramLongPollingBot
 import org.telegram.telegrambots.meta.TelegramBotsApi

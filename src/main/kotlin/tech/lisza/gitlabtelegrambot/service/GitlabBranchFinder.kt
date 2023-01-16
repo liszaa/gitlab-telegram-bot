@@ -1,7 +1,7 @@
-package lizsa.gitlabtelegrambot.service
+package tech.lisza.gitlabtelegrambot.service
 
-import lizsa.gitlabtelegrambot.gitlab.GitlabConnector
-import lizsa.gitlabtelegrambot.properties.GitlabProperties
+import tech.lisza.gitlabtelegrambot.gitlab.GitlabConnector
+import tech.lisza.gitlabtelegrambot.properties.GitlabProperties
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono

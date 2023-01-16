@@ -1,4 +1,4 @@
-package lizsa.gitlabtelegrambot
+package tech.lisza.gitlabtelegrambot
 
 
 /** Аннотация для классов-хэндлеров,

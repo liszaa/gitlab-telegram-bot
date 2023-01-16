@@ -1,9 +1,9 @@
-package lizsa.gitlabtelegrambot.gitlab
+package tech.lisza.gitlabtelegrambot.gitlab
 
-import lizsa.gitlabtelegrambot.GROUP_PROJECT_PATH
-import lizsa.gitlabtelegrambot.PROJECT_BRANCH_NAMES
-import lizsa.gitlabtelegrambot.graphql.GraphQlRequest
-import lizsa.gitlabtelegrambot.properties.GitlabProperties
+import tech.lisza.gitlabtelegrambot.GROUP_PROJECT_PATH
+import tech.lisza.gitlabtelegrambot.PROJECT_BRANCH_NAMES
+import tech.lisza.gitlabtelegrambot.graphql.GraphQlRequest
+import tech.lisza.gitlabtelegrambot.properties.GitlabProperties
 import org.springframework.graphql.client.HttpGraphQlClient
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Mono

@@ -1,9 +1,9 @@
-package lizsa.gitlabtelegrambot.config
+package tech.lisza.gitlabtelegrambot.config
 
-import lizsa.gitlabtelegrambot.Handler
-import lizsa.gitlabtelegrambot.properties.TelegramBotProperties
-import lizsa.gitlabtelegrambot.telegram.GitlabBot
-import lizsa.gitlabtelegrambot.telegram.handler.CommandHandler
+import tech.lisza.gitlabtelegrambot.Handler
+import tech.lisza.gitlabtelegrambot.properties.TelegramBotProperties
+import tech.lisza.gitlabtelegrambot.telegram.GitlabBot
+import tech.lisza.gitlabtelegrambot.telegram.handler.CommandHandler
 import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

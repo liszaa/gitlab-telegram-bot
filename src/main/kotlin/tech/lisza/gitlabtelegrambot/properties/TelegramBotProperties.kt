@@ -1,4 +1,4 @@
-package lizsa.gitlabtelegrambot.properties
+package tech.lisza.gitlabtelegrambot.properties
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component

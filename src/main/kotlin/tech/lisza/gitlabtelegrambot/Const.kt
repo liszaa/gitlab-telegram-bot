@@ -1,4 +1,4 @@
-package lizsa.gitlabtelegrambot
+package tech.lisza.gitlabtelegrambot
 
 
 const val GROUP_PROJECT_PATH = "group.projects.nodes"

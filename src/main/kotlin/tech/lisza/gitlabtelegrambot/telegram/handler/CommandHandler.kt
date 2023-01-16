@@ -1,6 +1,6 @@
-package lizsa.gitlabtelegrambot.telegram.handler
+package tech.lisza.gitlabtelegrambot.telegram.handler
 
-import lizsa.gitlabtelegrambot.Handler
+import tech.lisza.gitlabtelegrambot.Handler
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage
 import org.telegram.telegrambots.meta.api.objects.Update
 

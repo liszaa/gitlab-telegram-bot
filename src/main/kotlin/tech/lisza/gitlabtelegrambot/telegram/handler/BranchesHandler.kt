@@ -1,6 +1,6 @@
-package lizsa.gitlabtelegrambot.telegram.handler
+package tech.lisza.gitlabtelegrambot.telegram.handler
 
-import lizsa.gitlabtelegrambot.service.GitlabBranchFinder
+import tech.lisza.gitlabtelegrambot.service.GitlabBranchFinder
 import org.awaitility.Awaitility.await
 import org.springframework.stereotype.Component
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage

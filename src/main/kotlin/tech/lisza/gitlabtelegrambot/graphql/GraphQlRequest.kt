@@ -1,4 +1,4 @@
-package lizsa.gitlabtelegrambot.graphql
+package tech.lisza.gitlabtelegrambot.graphql
 
 import org.springframework.graphql.client.GraphQlClient
 import org.springframework.graphql.client.HttpGraphQlClient
