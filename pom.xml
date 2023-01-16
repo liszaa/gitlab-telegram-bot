@@ -21,7 +21,7 @@
         </license>
     </licenses>
     <properties>
-        <java.version>18</java.version>
+        <java.version>17</java.version>
         <kotlin.version>1.7.21</kotlin.version>
         <plugin.nexus.staging.ver>1.6.13</plugin.nexus.staging.ver>
         <plugin.maven.source.ver>3.2.1</plugin.maven.source.ver>
@@ -124,6 +124,9 @@
                         <arg>-Xjsr305=strict</arg>
                     </args>
                     <jvmTarget>${java.version}</jvmTarget>
+                    <compilerPlugins>
+                        <plugin>spring</plugin>
+                    </compilerPlugins>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -161,6 +164,7 @@
                 </executions>
             </plugin>
 
+<!--            ну приберись ну)))-->
 <!--            <plugin>-->
 <!--                <groupId>org.apache.maven.plugins</groupId>-->
 <!--                <artifactId>maven-javadoc-plugin</artifactId>-->

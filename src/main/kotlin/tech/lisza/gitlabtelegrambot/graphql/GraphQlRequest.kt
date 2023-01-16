@@ -36,7 +36,7 @@ private fun querySpec(
     client: HttpGraphQlClient,
     request: GraphQlRequest
 ): GraphQlClient.RetrieveSpec {
-    return if (request.variables != null && request.variables.isNotEmpty()) {
+    return if (!request.variables.isNullOrEmpty()) {
         client
             .documentName(request.query)
             .variables(request.variables)

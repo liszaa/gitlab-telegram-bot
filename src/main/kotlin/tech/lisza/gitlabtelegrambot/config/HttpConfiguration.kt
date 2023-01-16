@@ -18,9 +18,9 @@ import java.time.Duration
 import java.util.concurrent.TimeUnit
 
 @AutoConfiguration
-open class HttpConfiguration {
+open class HttpConfiguration { //после того как применишь spring плагин тебе идея подсветит что все open избыточные
 
-    @Bean
+    @Bean //нужен ли нам этот бин? может просто приватную функцию сделать?
     open fun httpClient(): HttpClient {
         val httpClient: HttpClient = HttpClient.create()
             .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)

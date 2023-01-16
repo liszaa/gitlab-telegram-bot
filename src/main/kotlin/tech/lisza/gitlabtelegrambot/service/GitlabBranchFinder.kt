@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono
 
 @Service
 class GitlabBranchFinder(
-    val gitlabConnector: GitlabConnector,
+    private val gitlabConnector: GitlabConnector,
     private val gitlabProperties: GitlabProperties
 ) {
 

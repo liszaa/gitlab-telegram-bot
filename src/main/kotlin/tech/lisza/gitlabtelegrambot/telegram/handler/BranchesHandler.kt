@@ -28,7 +28,7 @@ class BranchesHandler(private val gitlabBranchFinder: GitlabBranchFinder) : Comm
             }
             .doFinally { isTaskDone = true }
             .subscribe()
-        await().atMost(Duration.ofSeconds(30)).until { isTaskDone }
+        await().atMost(Duration.ofSeconds(30)).until { isTaskDone } //эта либа авайтилити - она вроде бы для тестов предназначена... хз
         return result
     }
 
@@ -37,14 +37,20 @@ class BranchesHandler(private val gitlabBranchFinder: GitlabBranchFinder) : Comm
     }
 
     private fun buildMarkdown(branches: Map<String, List<String>>): String {
-        var message = ""
-             branches.forEach { pair ->
-                 var pairMd =  "*${pair.key}*" + "\n"
-                 pair.value.forEach { pairMd += "$it\n" }
-                 pairMd += "\n"
-                 message += pairMd
+        //это мне передалось от Вити, мне не нравится когда мы вводим какую-то мьютабельную переменную, потом ее изменяем и возвращаем. котлин позволяет получать ее сразу, немьютабельную (val) через цепочку всяких map join и др. прикладываю пример
+//        var message = ""
+//             branches.forEach { pair ->
+//                 var pairMd =  "*${pair.key}*" + "\n"
+//                 pair.value.forEach { pairMd += "$it\n" }
+//                 pairMd += "\n"
+//                 message += pairMd
+//            }
+//        return message
+        return branches
+            .map { pair ->
+                "*${pair.key}*${pair.value.joinToString(separator = "\n", prefix = "\n", postfix = "\n") { it }}"
             }
-        return message
+            .joinToString(separator = "\n", postfix = "\n") { it }
     }
 
 }
