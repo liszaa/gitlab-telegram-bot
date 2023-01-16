@@ -4,6 +4,7 @@ import tech.lisza.gitlabtelegrambot.properties.GitlabProperties
 import io.netty.channel.ChannelOption
 import io.netty.handler.timeout.ReadTimeoutHandler
 import io.netty.handler.timeout.WriteTimeoutHandler
+import org.springframework.boot.autoconfigure.AutoConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.graphql.client.HttpGraphQlClient
@@ -16,11 +17,11 @@ import java.time.Duration
 
 import java.util.concurrent.TimeUnit
 
-@Configuration
-class HttpConfiguration {
+@AutoConfiguration
+open class HttpConfiguration {
 
     @Bean
-    fun httpClient(): HttpClient {
+    open fun httpClient(): HttpClient {
         val httpClient: HttpClient = HttpClient.create()
             .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)
             .responseTimeout(Duration.ofMillis(5000))
@@ -33,7 +34,7 @@ class HttpConfiguration {
 
 
     @Bean
-    fun webClient(properties: GitlabProperties): WebClient {
+    open fun webClient(properties: GitlabProperties): WebClient {
         return WebClient.builder()
             .clientConnector(ReactorClientHttpConnector(httpClient()))
             .baseUrl(properties.url)
@@ -43,7 +44,7 @@ class HttpConfiguration {
     }
 
     @Bean
-    fun httpGraphQlClient(properties: GitlabProperties): HttpGraphQlClient {
+    open fun httpGraphQlClient(properties: GitlabProperties): HttpGraphQlClient {
         return HttpGraphQlClient.create(webClient(properties))
     }
 
