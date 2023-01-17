@@ -1,10 +1,10 @@
 package tech.lisza.gitlabtelegrambot.service
 
-import tech.lisza.gitlabtelegrambot.gitlab.GitlabConnector
-import tech.lisza.gitlabtelegrambot.properties.GitlabProperties
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import tech.lisza.gitlabtelegrambot.gitlab.GitlabConnector
+import tech.lisza.gitlabtelegrambot.properties.GitlabProperties
 
 @Service
 class GitlabBranchFinder(

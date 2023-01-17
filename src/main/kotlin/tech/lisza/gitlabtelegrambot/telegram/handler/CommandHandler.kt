@@ -1,10 +1,8 @@
 package tech.lisza.gitlabtelegrambot.telegram.handler
 
-import tech.lisza.gitlabtelegrambot.Handler
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage
 import org.telegram.telegrambots.meta.api.objects.Update
 
-@Handler
 interface CommandHandler {
 
     val command: String

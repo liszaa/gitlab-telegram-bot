@@ -1,10 +1,10 @@
 package tech.lisza.gitlabtelegrambot.telegram.handler
 
-import tech.lisza.gitlabtelegrambot.service.GitlabBranchFinder
 import org.awaitility.Awaitility.await
 import org.springframework.stereotype.Component
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage
 import org.telegram.telegrambots.meta.api.objects.Update
+import tech.lisza.gitlabtelegrambot.service.GitlabBranchFinder
 import java.time.Duration
 
 @Component
@@ -37,14 +37,11 @@ class BranchesHandler(private val gitlabBranchFinder: GitlabBranchFinder) : Comm
     }
 
     private fun buildMarkdown(branches: Map<String, List<String>>): String {
-        var message = ""
-             branches.forEach { pair ->
-                 var pairMd =  "*${pair.key}*" + "\n"
-                 pair.value.forEach { pairMd += "$it\n" }
-                 pairMd += "\n"
-                 message += pairMd
+        return branches
+            .map { pair ->
+                "*${pair.key}*${pair.value.joinToString(separator = "\n", prefix = "\n", postfix = "\n") { it }}"
             }
-        return message
+            .joinToString(separator = "\n", postfix = "\n") { it }
     }
 
 }
