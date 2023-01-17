@@ -39,8 +39,16 @@ class GitlabBot(
             return
         }
         val handler = findHandler(update)
-        val response = handler.handle(update)
-        execute(response)
+         handler.handle(update)
+             .doOnSuccess { execute(it) }
+             .doOnError {
+                        val response = SendMessage.builder()
+                                       .chatId(update.message.chatId.toString())
+                                       .text(it.stackTrace.toString())
+                                       .build()
+                        execute(response)
+                        }
+             .subscribe()
     }
 
     private fun isAccessDenied(update: Update): Boolean {

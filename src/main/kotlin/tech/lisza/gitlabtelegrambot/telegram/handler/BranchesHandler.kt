@@ -4,6 +4,8 @@ import org.awaitility.Awaitility.await
 import org.springframework.stereotype.Component
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage
 import org.telegram.telegrambots.meta.api.objects.Update
+import reactor.core.publisher.Mono
+import reactor.core.publisher.MonoSink
 import tech.lisza.gitlabtelegrambot.service.GitlabBranchFinder
 import java.time.Duration
 
@@ -13,23 +15,16 @@ class BranchesHandler(private val gitlabBranchFinder: GitlabBranchFinder) : Comm
     override val command: String = "/branches"
 
 
-    override fun handle(update: Update): SendMessage {
-        var isTaskDone = false
+    override fun handle(update: Update): Mono<SendMessage> {
+
         val branches = parseBranchPattern(update.message.text)
-        var result = buildMessage(update, "Что-то пошло не так")
-        gitlabBranchFinder
+        return gitlabBranchFinder
             .findProjectsWithListBranches(branches)
-            .doOnSuccess {
-                result = buildMessage(update, buildMarkdown(it))
-                result.enableMarkdown(true)
+            .map {
+                    val result = buildMessage(update, buildMarkdown(it))
+                        result.enableMarkdown(true)
+                        result
             }
-            .doOnError { err ->
-                result = buildMessage(update, err.stackTraceToString())
-            }
-            .doFinally { isTaskDone = true }
-            .subscribe()
-        await().atMost(Duration.ofSeconds(30)).until { isTaskDone }
-        return result
     }
 
     private fun parseBranchPattern(message: String): List<String> {
