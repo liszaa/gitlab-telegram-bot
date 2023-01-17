@@ -8,7 +8,7 @@ import tech.lisza.gitlabtelegrambot.properties.GitlabProperties
 
 @Service
 class GitlabBranchFinder(
-    val gitlabConnector: GitlabConnector,
+    private val gitlabConnector: GitlabConnector,
     private val gitlabProperties: GitlabProperties
 ) {
 
